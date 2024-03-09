@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: .
+    environment:
+      NEXT_PUBLIC_AUTH_REDIRECT_URI: "http://13.212.211.100:3333"
+    ports:
+      - "3000:3000"
