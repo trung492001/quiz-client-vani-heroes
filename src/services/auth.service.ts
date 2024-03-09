@@ -36,9 +36,15 @@ export const signUpService = async (
         password,
       }
     );
-    return result;
-  } catch (err) {
+    return {
+      status: result.status,
+      data: result.data,
+    };
+  } catch (err: AxiosError | any) {
     console.log(err);
-    return null;
+    return {
+      status: err.response.status,
+      data: err.response.data,
+    };
   }
 };
